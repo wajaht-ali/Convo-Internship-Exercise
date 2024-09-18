@@ -7,6 +7,6 @@
   box-sizing: border-box;
 }
 .App {
-  height: 435px;
+  height: auto;
   width: 100%;
 }
