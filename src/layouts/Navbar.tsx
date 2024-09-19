@@ -1,5 +1,5 @@
 import React, { FormEvent, useContext, useEffect, useState } from "react";
-import SearchInput from "./SearchInput";
+import SearchInput from "../components/SearchInput";
 import { FiLogIn } from "react-icons/fi";
 import { PiUserFill } from "react-icons/pi";
 import logo from "../assets/main_logo.png";
@@ -8,8 +8,8 @@ import Recipe from "../models/Recipe.model";
 import { RecipeContext } from "../context/RecipeContext"; // Import context
 
 type ContextTypes = {
-  recipes: Recipe[];
-  setRecipes: React.Dispatch<React.SetStateAction<Recipe[]>>;
+  recipes: Recipe[] | null;
+  setRecipes: React.Dispatch<React.SetStateAction<Recipe[] | null>>;
 };
 
 const Navbar: React.FC = () => {
@@ -19,7 +19,6 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     if (query === "") {
-      // If the search is cleared, reset to all recipes
       setRecipes(recipes);
     }
   }, [query, setQuery, recipes]);
@@ -28,14 +27,12 @@ const Navbar: React.FC = () => {
 
     try {
       if (query === "") {
-        // If the search is cleared, reset to all recipes
-        setRecipes(recipes); // Or fetch original recipes from the API or context if needed
+        setRecipes(recipes);
       } else {
-        const searchResults = recipes.filter((item) =>
+        const searchResults = recipes?.filter((item) =>
           item.name.toLowerCase().includes(query.toLowerCase())
         );
-        setRecipes(searchResults);
-        // Directly update the global state with filtered recipes
+        setRecipes(searchResults ?? null);
       }
     } catch (error) {
       console.log(`Error searching for recipes: ${error}`);

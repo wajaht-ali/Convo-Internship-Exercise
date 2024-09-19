@@ -1,16 +1,10 @@
 import React, { Suspense, useContext } from "react";
 import "../../styles/home.css";
 import { RecipeContext } from "../../context/RecipeContext";
-import Recipe from "../../models/Recipe.model";
-
-type ContextTypes = {
-  recipes: Recipe[];
-  setRecipes: React.Dispatch<React.SetStateAction<Recipe[]>>;
-};
 
 const RecipeData = React.lazy(() => import("../RecipeData"));
 const Home: React.FC = () => {
-  const { recipes, setRecipes } = useContext<ContextTypes>(RecipeContext);
+  const { recipes, setRecipes } = useContext(RecipeContext);
   return (
     <>
       <div className="home_banner">

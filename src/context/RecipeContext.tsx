@@ -7,14 +7,16 @@ import React, {
 } from "react";
 import Recipe from "../models/Recipe.model";
 
+const RECIPES_URL_KEY = import.meta.env.VITE_BASE_URL;
 interface RecipeContextType {
   recipes: Recipe[] | null;
   setRecipes: React.Dispatch<React.SetStateAction<Recipe[] | null>>;
 }
 
-const RECIPES_URL_KEY = import.meta.env.VITE_BASE_URL;
-export const RecipeContext: React.Context<RecipeContextType | undefined> =
-  createContext<RecipeContextType | undefined>(undefined);
+export const RecipeContext = createContext<RecipeContextType>({
+  recipes: null,
+  setRecipes: () => {},
+});
 
 export const RecipeContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -40,10 +42,12 @@ export const RecipeContextProvider: React.FC<{ children: ReactNode }> = ({
     getRecipes();
   }, []);
 
-  const memoizedRecipes = useMemo(() => recipes, [recipes]);
+  const memoizedRecipesData = useMemo(() => recipes, [recipes]);
 
   return (
-    <RecipeContext.Provider value={{ recipes: memoizedRecipes, setRecipes }}>
+    <RecipeContext.Provider
+      value={{ recipes: memoizedRecipesData, setRecipes }}
+    >
       {children}
     </RecipeContext.Provider>
   );
