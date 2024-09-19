@@ -26,3 +26,19 @@
   height: 72px;
   margin-bottom: 10px;
 }
+
+@media (max-width: 600px) {
+  .footer {
+    height: 200px;
+  }
+
+  .footer .ftr_content {
+    padding-left: 20px;
+    font-size: 16px;
+  }
+
+  .footer .ftr_content img {
+    width: 100px;
+    height: 48px;
+  }
+}
