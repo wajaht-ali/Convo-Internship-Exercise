@@ -10,7 +10,7 @@ interface Props {
   setRecipes: React.Dispatch<React.SetStateAction<Recipe[] | null>>;
 }
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const RecipeData: React.FC<Props> = ({ recipes, setRecipes }) => {
+const RecipeData: React.FC<Props> = ({ recipes }) => {
   if (recipes === undefined) {
     return null;
   }
