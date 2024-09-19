@@ -5,7 +5,7 @@
   align-items: center;
   color: #fff;
   text-transform: uppercase;
-  /* padding: 8px 20px; */
+  margin-bottom: 8px;
 }
 .navbar {
   width: 100%;
@@ -59,4 +59,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.main_header .results_text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
 }

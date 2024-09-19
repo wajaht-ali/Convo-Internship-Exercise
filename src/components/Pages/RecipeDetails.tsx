@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Recipe from "../../models/Recipe.model";
-import "../../styles/recipe-details.css";
 import img from "../../assets/list-style-type.png";
+import "../../styles/recipe-details.css";
 
 const RecipeDetails: React.FC = () => {
   const RECIPES_URL_KEY = import.meta.env.VITE_BASE_URL;
@@ -35,7 +35,7 @@ const RecipeDetails: React.FC = () => {
       <div className="home_banner">
         <h1>Food Diary</h1>
       </div>
-      <div className="navigation_items">
+      <div className="navigation_items_box">
         <div className="line"></div>
         <ul className="list_items">
           <li>Home</li>
@@ -57,8 +57,14 @@ const RecipeDetails: React.FC = () => {
             <ul>
               {recipeDetails.ingredients.map((ingredient, index) => (
                 <div className="list_items" key={index}>
-                  <img src={img} alt="✅" />
-                  <p>{ingredient}</p>
+                  <div className="single_item">
+                    <img
+                      style={{ height: "20px", width: "20px" }}
+                      src={img}
+                      alt="✅"
+                    />
+                    <p>{ingredient}</p>
+                  </div>
                 </div>
               ))}
             </ul>

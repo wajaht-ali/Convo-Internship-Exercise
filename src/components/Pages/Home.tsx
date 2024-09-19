@@ -11,7 +11,6 @@ type ContextTypes = {
 const RecipeData = React.lazy(() => import("../RecipeData"));
 const Home: React.FC = () => {
   const { recipes, setRecipes } = useContext<ContextTypes>(RecipeContext);
-  console.log(recipes);
   return (
     <>
       <div className="home_banner">
@@ -19,7 +18,11 @@ const Home: React.FC = () => {
       </div>
       <div className="recipes_data">
         {/* Lazy loading component */}
-        <Suspense fallback={<div>Please Wait... Loading!</div>}>
+        <Suspense
+          fallback={
+            <div className="lazy_loading_text">Please Wait... Loading!</div>
+          }
+        >
           <RecipeData recipes={recipes} setRecipes={setRecipes} />
         </Suspense>
       </div>
