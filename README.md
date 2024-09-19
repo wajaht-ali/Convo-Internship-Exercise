@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Food Diary Recipes Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Food Diary project is a React + Typesrcipt project, demonstrating the collections of recipes data being fetched from the source of "DummyJson" API along with searching and displaying recipe details like features.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**UI Development**: React + Typescript
 
-## Expanding the ESLint configuration
+**Styling**: CSS3
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**State Management:** Context API
 
-- Configure the top-level `parserOptions` property like this:
+**Other packages**: react-icons, react-router-dom
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Directory Structure
+
+Project generic directory structure includes:
+
+```
+├── public
+├── src
+│   ├── assets
+│   │   └── images      - Images used in the project
+│   ├── components      - Reusable components
+│   │     └── Pages     - Multiple Pages
+│   ├── contexts        - Context API for state
+│   ├── models          - For creating TS interfaces
+│   ├── routes          - For react components routing
+│   ├── App.tsx         - Root component
+│   ├── index.tsx       - Entry point
+│   └── styles          - CSS Styling
+├── .gitignore
+├── .env
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Best Practises
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+This project involves following techniques and practises to make the code more optimize and also improving the code quality:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Memoization + Code Splitting
+- Lazy Loading of heavy components.
+- Envinoment Variables setup for base urls'.
+
+## Screenshots
+
+![Home Page](./src/assets/Home%20Page.png)
+
+![Recipe Details](./src/assets/Recipe%20Details.png)
+
+![Search Page](./src/assets/Search%20Page.png)
+
+## Demo
+
+you may check out the live demonstration of Desktop and Mobile view of this project in the video mentioned below:
+
+https://www.canva.com/design/DAGROXlBlg4/sfhFlIbcquhWkqOmrWfZug/watch?utm_content=DAGROXlBlg4&utm_campaign=designshare&utm_medium=link&utm_source=editor
+
+## Deployment
+
+This project has been deployed to the **Vercel** and can be access via following link:
+
+https://food-diary-project.vercel.app/
+
+## Outro
+
+This was all about the project, if you have any improvement ideas feel free to share with me.
