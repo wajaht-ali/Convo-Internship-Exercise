@@ -40,9 +40,10 @@ Project generic directory structure includes:
 
 This project involves following techniques and practises to make the code more optimize and also improving the code quality:
 
-- Memoization + Code Splitting
+- Memoization + Code Splitting.
 - Lazy Loading of heavy components.
 - Envinoment Variables setup for base urls'.
+- Mobile devices responsiveness via media queries.
 
 ## Screenshots
 
@@ -51,6 +52,16 @@ This project involves following techniques and practises to make the code more o
 ![Recipe Details](./src/assets/Recipe%20Details.png)
 
 ![Search Page](./src/assets/Search%20Page.png)
+
+### Mobile Devices Responsiveness
+
+The project is fully responsive and works well on mobile devices.
+
+![Home Page](./src/assets/Mob_recipe_home.png)
+
+![Recipes Collection](./src/assets/Mob_recipe_coll.png)
+
+![Recipe Details](./src/assets/Mob_Recipe_details.png)
 
 ## Demo
 
